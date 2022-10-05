@@ -46,6 +46,16 @@ Download the latest version of the .NET framework for your system from here;
 
 https://dotnet.microsoft.com/download/dotnet/7.0
 
+# Other Devices
+
+## ODroid HC4
+
+This script has been tentatively tested on an ODroid HC4, which has an ARM Cortex A55 which is an ARMv8 Processor. The script installs correctly, however the GPIO functionality hasn't been tested yet.
+
+The .NET GPIO Nuget Package supports the Odroid Devices according to the documentation, so it should be fine to use.
+
+If you have one of these devices and get it working, do get in touch by tweeting me [@pete_codes](https://www.twitter.com/pete_codes)!
+
 # Remote Deployment and Debugging
 
 If you'd like to be able to write code on your PC and then Deploy and Debug that code directly on a Raspberry Pi, then I've create a one line script to set that up;
