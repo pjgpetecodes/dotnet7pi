@@ -26,6 +26,10 @@ You can install Dot Net 7 on the Raspberry Pi in one command by executing;
 wget -O - https://raw.githubusercontent.com/pjgpetecodes/dotnet7pi/master/install.sh | sudo bash
 ```
 
+You can see a run through of the installation here;
+
+![Image](/assets/install.gif "Installation")
+
 # Local Install Script
 
 If you've cloned this repo, you can install Dot Net 7 by running the following in the root of the repo;
