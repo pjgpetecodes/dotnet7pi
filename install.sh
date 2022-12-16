@@ -164,11 +164,11 @@ echo -e "\e[1m    Make Link Permanent"
 echo -e "\e[1m----------------------------------------"
 echo -e "\e[0m"
 
-if grep -q 'export DOTNET_ROOT=' /home/pi/.bashrc;  then
-  echo 'Already added link to .bashrc'
+if grep -q 'export DOTNET_ROOT=' /etc/environment;  then
+  echo 'Already added link to environment'
 else
-  echo 'Adding Link to .bashrc'
-  echo 'export DOTNET_ROOT=/opt/dotnet' >> /home/pi/.bashrc
+  echo 'Adding Link to environment'
+  echo 'export DOTNET_ROOT=/opt/dotnet' >> /etc/environment
 fi
 
 echo -e "\e[0m"
