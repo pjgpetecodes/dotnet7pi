@@ -164,11 +164,11 @@ echo -e "\e[1m    Make Link Permanent"
 echo -e "\e[1m----------------------------------------"
 echo -e "\e[0m"
 
-if grep -q 'export DOTNET_ROOT=' /home/pi/.bashrc;  then
+if grep -q 'export DOTNET_ROOT=' $HOME/.bashrc;  then
   echo 'Already added link to .bashrc'
 else
   echo 'Adding Link to .bashrc'
-  echo 'export DOTNET_ROOT=/opt/dotnet' >> /home/pi/.bashrc
+  echo 'export DOTNET_ROOT=/opt/dotnet' >> $HOME/.bashrc
 fi
 
 echo -e "\e[0m"
@@ -179,8 +179,8 @@ echo -e "\e[0m"
 
 cd ~
 
-wget -O /home/pi/dotnetdebug.sh https://raw.githubusercontent.com/pjgpetecodes/dotnet7pi/master/dotnetdebug.sh
-chmod +x /home/pi/dotnetdebug.sh 
+wget -O $HOME/dotnetdebug.sh https://raw.githubusercontent.com/pjgpetecodes/dotnet7pi/master/dotnetdebug.sh
+chmod +x $HOME/dotnetdebug.sh 
 
 echo -e "\e[0m"
 echo -e "\e[1m----------------------------------------"
