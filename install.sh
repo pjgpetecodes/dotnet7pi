@@ -4,10 +4,19 @@ echo -e "\e[1m----------------------------------------"
 echo -e "\e[1m          .NET 7 Installer"
 echo -e "\e[1m----------------------------------------"
 echo ""
-echo -e "\e[1mPete Codes / PJG Creations 2021"
+echo -e "\e[1mPete Codes / PJG Creations 2024"
 echo ""
-echo -e "Latest update 01/10/2022"
+echo -e "Latest update 02/01/2024"
 echo ""
+
+echo -e "\e[0m"
+echo -e "\e[1m----------------------------------------"
+echo -e "\e[1m Installing .NET for the following user"
+echo -e "\e[1m----------------------------------------"
+echo -e "\e[0m"
+
+username=$(logname)
+echo -e "\e[1m$username\e[0m"
 
 echo -e "\e[0m"
 echo -e "\e[1m----------------------------------------"
@@ -46,7 +55,8 @@ detectArch() {
     arch=arm32
   
     if command -v uname > /dev/null; then
-        machineCpu=$(uname -m)-$(uname -p)
+        # machineCpu=$(uname -m)-$(uname -p)
+        machineCpu=$(getconf LONG_BIT)
 
         if [[ $machineCpu == *64* ]]; then
             arch=arm64
@@ -67,6 +77,12 @@ echo -e "\e[1m----------------------------------------"
 echo -e "\e[0m"
 echo "- .NET SDK $dotnetver"
 echo "- ASP.NET Runtime $dotnetver"
+echo ""
+echo -e "\e[1m----------------------------------------"
+echo -e "\e[0m"
+echo "For the following user:"
+echo ""
+echo -e "\e[1m$username\e[0m"
 echo ""
 echo -e "\e[1m----------------------------------------"
 echo -e "\e[0m"
@@ -164,11 +180,11 @@ echo -e "\e[1m    Make Link Permanent"
 echo -e "\e[1m----------------------------------------"
 echo -e "\e[0m"
 
-if grep -q 'export DOTNET_ROOT=' $HOME/.bashrc;  then
+if grep -q 'export DOTNET_ROOT=' /home/$username/.bashrc;  then
   echo 'Already added link to .bashrc'
 else
   echo 'Adding Link to .bashrc'
-  echo 'export DOTNET_ROOT=/opt/dotnet' >> $HOME/.bashrc
+  echo 'export DOTNET_ROOT=/opt/dotnet' >> /home/$username/.bashrc
 fi
 
 echo -e "\e[0m"
@@ -179,8 +195,8 @@ echo -e "\e[0m"
 
 cd ~
 
-wget -O $HOME/dotnetdebug.sh https://raw.githubusercontent.com/pjgpetecodes/dotnet7pi/master/dotnetdebug.sh
-chmod +x $HOME/dotnetdebug.sh 
+wget -O /home/$username/dotnetdebug.sh https://raw.githubusercontent.com/pjgpetecodes/dotnet7pi/master/dotnetdebug.sh
+chmod +x /home/$username/dotnetdebug.sh 
 
 echo -e "\e[0m"
 echo -e "\e[1m----------------------------------------"
